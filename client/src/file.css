@@ -1,0 +1,230 @@
+.songDetailContainer b {
+    display: block;
+    padding: 5px 0px;
+}
+
+.songDetailContainer .songDetailWidgetSmall {
+    float:left;
+    width: 100%;
+    height: 170px;
+    font: 12px "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif;
+    color: #333;
+    overflow: hidden;
+    min-width: 100px;
+    z-index: 0;
+    
+}
+
+.songDetailContainer .songDetailWidgetSmall::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    bottom:0;
+    height:20px;
+    width: 100%;
+    background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0.5) 90%,#fff);
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255 0.5) 90%, rgb(255, 255, 255));
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+}
+.songDetailContainer .songDetailWidgetExpanded{
+    width: 100%;
+    height: auto;
+    font: 12px "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif;
+    color: #333;
+    overflow: visible;
+    min-width: 100px;
+    z-index: 0;
+}
+.songDetailContainer .detailsContainer {
+    padding: 10px 0;
+}
+.songDetailContainer .descriptionTagContainer {
+    padding-bottom: 35px;
+}
+.songDetailContainer .tag {
+    float: left;
+    margin: 0 6px 6px 0;
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    padding: 0 7px;
+    background: #999;
+    border: 1px solid #999;
+    border-left-width: 0;
+    color: #fff;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 20px;
+    user-select: none;
+    list-style: none;
+    content: "#";
+    display: block;
+    margin-right: 3px;
+}
+
+.songDetailContainer .tag:hover {
+    background: #666;
+}
+
+
+
+#songDetailContainer {
+    font: 14px "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif;
+    font-size: 12px;
+    color: #999;
+}
+
+
+
+
+
+.songDetailContainer .showMoreText{
+    width: 400px;
+    height: 20px;
+    color: #999;
+}
+.songDetailContainer .showMoreText:hover {
+    color: #333;
+    /* cursor: pointer; */
+}
+.songDetailContainer .showMoreText:active {
+    color: #333;
+}
+
+.songDetailContainer .songDescriptionAt {
+    color: #38d;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.songDetailContainer .popup {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    top: 50px;
+    right: calc(50% - 100px);
+    width:120px;
+    color: #333;
+    background: #fff;
+    min-height:199px;
+    text-align: center;
+    z-index: 10;
+    cursor: default;
+}
+
+.songDetailContainer .songDescriptionAt:hover .popup {
+    display: flex;
+}
+
+
+.songDetailContainer .popup img{
+    border-radius: 50%;
+    text-align: center;
+    position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width:80px;
+    height: 80px;
+    opacity: 1;
+    box-shadow: rgba(0,0,0, .1) 0 0 0 1px inset;
+    transition: opacity .2s linear;
+    bottom: 100%;
+}
+
+.songDetailContainer .popup .songComponentAtArtistName{
+    text-align: center;
+    position: center;
+    background-repeat: no-repeat;
+    display: block;
+    font-size: 14px;
+    font-weight:100;
+    color: #333;
+    padding: 5px 0;
+    cursor:pointer;
+}
+
+.songDetailContainer .popup .songComponentAtFollows {
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+.songDetailContainer .popup small{
+    text-align: center;
+    position: center;
+    background-repeat: no-repeat;
+    font-weight:100;
+    color: #666;
+}
+
+.songDetailContainer .songDescriptionAt:hover {
+    color: #666;
+    cursor: pointer;
+}
+
+.songDetailContainer .songDescriptionURL {
+    color: #38d;
+    cursor: pointer;
+}
+.songDetailContainer .songDescriptionURL:hover {
+    color: #666;
+    cursor: pointer;
+}
+
+.songDetailContainer .tooltip {
+    display:inline-block;
+    position:relative;
+    text-align:left;
+}
+
+.songDetailContainer .tooltip .bottom {
+    top:25px;
+    left:50%;
+    transform:translate(-50%, 0);
+    padding:10px;
+    color:#333;
+    background-color:#fff;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    border:1px solid #999;box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    display:none;
+}
+
+.songDetailContainer .tooltip:hover .bottom {
+    display:block;
+}
+
+.songDetailContainer .tooltip .bottom i {
+    position:absolute;
+    bottom:100%;
+    left:50%;
+    margin-left:-12px;
+    width:24px;
+    height:12px;
+    overflow:hidden;
+}
+
+.songDetailContainer .tooltip .bottom i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:50%;
+    transform:translate(-50%,50%) rotate(45deg);
+    background-color:#fff;
+    border:1px solid #999;box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
