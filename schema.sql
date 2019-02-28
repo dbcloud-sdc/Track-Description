@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS artist;
+DROP DATABASE IF EXISTS description;
 
-CREATE DATABASE artist;
+CREATE DATABASE description;
 
-USE artist;
+USE description;
 
 CREATE TABLE artist_info (
   id INT(100) PRIMARY KEY AUTO_INCREMENT,
@@ -18,7 +18,7 @@ CREATE TABLE song_description (
   id INT(100) PRIMARY KEY AUTO_INCREMENT,
   song_name TEXT(200),
   artist_name TEXT(200), 
-  licence TEXT(200), 
+  license TEXT(200), 
   description_text TEXT(4000), 
   released_by TEXT(200), 
   release_date DATE, 
@@ -26,7 +26,7 @@ CREATE TABLE song_description (
   tags TEXT(200) 
 )
 
--- const sqlsong = 'INSERT INTO song_description(songname, artistname, licence, descriptiontext, releasedby, releasedate, pline, tags ) VALUES ?';
+-- const sqlsong = 'INSERT INTO song_description(songname, artistname, license, descriptiontext, releasedby, releasedate, pline, tags ) VALUES ?';
 -- //to run, open mysql 5.7 
 -- and use the following command from the root directory:
 -- source ./schema.sql; 

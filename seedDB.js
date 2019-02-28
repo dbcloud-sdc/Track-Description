@@ -24,7 +24,7 @@ const avatars = [
 'https://res.cloudinary.com/da5zmmaac/image/upload/c_scale,f_webp,h_200,w_200/v1550962757/CaramelSleeping',
 'http://res.cloudinary.com/da5zmmaac/image/upload/c_scale,f_webp,w_200/v1550962758/paperflowers'
 ];
-const songLicence = ['All Rights Reserved', 'Creative Commons License', '', ''];
+const songLicense = ['All Rights Reserved', 'Creative Commons License', '', ''];
 for (let i = 0; i < 100; i += 1) {
   if(i === 0) {
     artistNames.push('fredness');
@@ -71,7 +71,7 @@ for (let i = 0; i < 100; i += 1) {
   songvalues.push([
     faker.lorem.words(Math.floor(Math.random * 5)), // song name
     artistNames[Math.floor(Math.random() * 100)], // artist name
-    songLicence[Math.floor(Math.random() * songLicence.length)], // license
+    songLicense[Math.floor(Math.random() * songLicense.length)], // license
     text, // description text
     faker.company.companyName(), // released by
     faker.date.past(), // release date
@@ -83,7 +83,7 @@ for (let i = 0; i < 100; i += 1) {
 const sqlartist = `INSERT INTO artist_info(artist_name, avatar_picture, no_of_followers, no_of_tracks, pro_status, is_followed)
      VALUES ?`;
 
-const sqlsong = 'INSERT INTO song_description(song_name, artist_name, licence, description_text, released_by, release_date, p_line, tags ) VALUES ?';
+const sqlsong = 'INSERT INTO song_description(song_name, artist_name, license, description_text, released_by, release_date, p_line, tags ) VALUES ?';
 connection.query(sqlartist, [artistvalues], (err, result) => {
   if (err) {
     console.log(err);
