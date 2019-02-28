@@ -215,8 +215,7 @@ Returns the `{ songInfo }` deleted from the database.
   * **Code:** 400 Bad Request error
   * **Content:** `{ error : "Bad Request error" }`
 
-<hr>
 ## Change History
 |Name                                 |Version    |Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Description     |
 |:----------------------------------- |:--------- |:--------- |:------- |
-|[@jackylei94](https://github.com/ecuyle) |1.0        |2019-02-27 |
+|[@JackyLei94](https://github.com/ecuyle) |1.0        |2019-02-27 |Document initial API CRUD routes for relevant models in the `Track Description` microservice.
