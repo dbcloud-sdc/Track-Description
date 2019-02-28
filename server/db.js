@@ -3,7 +3,7 @@ const credentials = require('../credentials');
 
 const connection = mysql.createConnection({
   host: credentials.host,
-  user: credentials.username,
+  user: credentials.user,
   password: credentials.password,
   database: credentials.database,
 });
