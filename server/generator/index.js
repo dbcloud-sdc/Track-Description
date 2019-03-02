@@ -41,8 +41,8 @@ const generateSongInfo = function() {
   return `${song_name}|${artist_name}|${license}|${description_text}|${released_by}|${release_date}|${p_line}|${tags}`;
 }
 
-const artistInfoGenerator = new DataGenerator(generateArtistInfo, path.join(__dirname, '/artistInfo.csv'), 10*1000*1000, 10*1000);
-const songInfoGenerator = new DataGenerator(generateSongInfo, path.join(__dirname, '/songInfo.csv'), 10*1000*1000, 10*1000);
+const artistInfoGenerator = new DataGenerator(generateArtistInfo, path.join(__dirname, '/artistInfo.csv'), 10*1000*1000, 1000);
+const songInfoGenerator = new DataGenerator(generateSongInfo, path.join(__dirname, '/songInfo.csv'), 10*1000*1000, 1000);
 
 artistInfoGenerator.generate();
 songInfoGenerator.generate();
