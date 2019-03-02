@@ -1,0 +1,4 @@
+server/generator/artistInfo.csv
+server/generator/songInfo.csv
+node_modules/
+credentials.js
