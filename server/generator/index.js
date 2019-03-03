@@ -12,7 +12,7 @@ const songs = ["Let Me Love You", "Don't", "Work", "Just Friends", "Can't Stop M
 const songLicense = ['All Rights Reserved', 'Creative Commons License', ''];
 const descriptions = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit', 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua', 'Excepteur sint occaecat cupidatat non proident'];
 const companies = ['Bogan LLC', 'Prosacco and Sons', 'Bergnaum LLC', 'Willms Inc'];
-const dates = ['Mon Jul 02 2018 10:53:47 GMT-0700 (Pacific Daylight Time)', 'Wed Sep 19 2018 12:22:32 GMT-0700 (Pacific Daylight Time)',  'Mon Jan 07 2019 03:43:38 GMT-0800 (Pacific Standard Time)'];
+const dates = ['1994-09-17', '1994-10-16',  '1977-07-07'];
 const p_lines = ['℗ Glover and Sons', '℗ Schmeler Inc', '℗ Zemlak - Rogahn LLC'];
 const tagsList = ['Lorem ipsum dolor', 'Diam maecenas sed enim', 'Ut tristique et egestas quis'];
 
