@@ -4,14 +4,15 @@ echo -e "\n# -------------------------------------"
 echo "# STARTING POSTGRESQL LOADING SEQUENCE"
 echo "# -------------------------------------"
 echo "# Resetting PostgreSQL schema...."
+PGPASSWORD=student /Library/PostgreSQL/11/bin/psql -U postgres < /Users/jackylei/Desktop/hackreactor/sdc/track-description/server/postgres/schema.sql
 echo "# ----- START PostgreSQL Output -----"
 start=$(date +'%T')
+echo "Starting copying process at: $start"
+start=$(date +'%T')
 SECONDS=0
-echo "Starting copying process at:$start"
-PGPASSWORD=student /Library/PostgreSQL/11/bin/psql -U postgres < /Users/jackylei/Desktop/hackreactor/sdc/track-description/server/postgres/loader.sql
-echo "# ----- START PostgreSQL Output -----"
+PGPASSWORD=student /Library/PostgreSQL/11/bin/psql -U postgres -d track_descriptions < /Users/jackylei/Desktop/hackreactor/sdc/track-description/server/postgres/loader.sql
 end=$(date +'%T')
-echo "Finishe copying process at: $end"
+echo "Finished copying process at: $end"
 duration=$SECONDS
 echo -e "\nSuccess. Elapsed time: $(($duration)) seconds\n"
 echo "# -------------------------------------"
