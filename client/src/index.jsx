@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './file.css';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('description'));
+let song_id = window.location.pathname.slice(1) || 1;
+ReactDOM.render(<App song_id = {song_id}/>, document.getElementById('description'));
 
 if (module.hot) {
   module.hot.accept();

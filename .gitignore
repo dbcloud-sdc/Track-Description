@@ -3,3 +3,4 @@ server/seeder/generator/postgres/data/
 node_modules/
 credentials.js
 server/config.js
+client/dist
