@@ -4,3 +4,5 @@ node_modules/
 credentials.js
 server/config.js
 public/dist
+newrelic.js
+server/newrelic_agent.log
