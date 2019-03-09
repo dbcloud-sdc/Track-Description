@@ -1,6 +1,8 @@
 import React from 'react';
 import ArtistWidget from './components/ArtistWidget';
 import SongDetailWidget from './components/songDetailWidget';
+import artistData from './data/artistData';
+import songData from './data/songData';
 
 import Styled from './appContainerStyle';
 
@@ -10,29 +12,26 @@ class App extends React.Component {
 
     this.state = {
       detailsTruncated: true,
-      artistData: null,
-      songData: null,
-      artistIdx: null,
+      artistData: artistData[13],
+      artists: artistData,
+      songData: songData[13],
     };
     this.toggleTruncate = this.toggleTruncate.bind(this);
   }
 
   componentDidMount() {
-    fetch('http://localhost:8081/artistinfo').then(response => response.json())
-      .then((data) => {
-        this.setState({
-          artistData: data,
-          artistIdx: Math.floor(Math.random() * data.length),
-        });
-        return data;
+    this.fetchData()
+  }
+
+  fetchData() {
+    fetch(`http://localhost:8081/api/song/${this.props.song_id}`).then(response => response.json())
+    .then((data) => {
+      this.setState({
+        songData: data.song,
+        artistData: data.artist
       });
-    fetch(`http://localhost:8081${window.location.pathname}songinfo/`).then(response => response.json())
-      .then((data) => {
-        this.setState({
-          songData: data,
-        });
-        return data;
-      });
+      return data;
+    });
   }
 
   toggleTruncate() {
@@ -42,21 +41,13 @@ class App extends React.Component {
     });
   }
 
-
   render() {
-    const {
-      artistData, artistIdx, songData, detailsTruncated,
-    } = this.state;
+    const {artistData, songData, detailsTruncated} = this.state;
 
-    let songNumber = window.location.pathname.split('/')[2];
-    if(songNumber === '' || !songNumber ) {
-      songNumber = 4;
-    } 
     return (
       <Styled>
-
-        <ArtistWidget artistData={artistData && artistData[songNumber - 1]} />
-        <SongDetailWidget artistData={artistData} songData={songData && songData[0]} truncated={detailsTruncated} toggleTruncate={this.toggleTruncate} />
+        <ArtistWidget artistData={artistData} />
+        <SongDetailWidget artistData={artistData} songData={songData} truncated={detailsTruncated} toggleTruncate={this.toggleTruncate} />
       </Styled>
     );
   }

@@ -2,10 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
-const artistInfoRoute = require('./routers/artistInfoRoute.js');
-const songInfoRoute = require('./routers/songInfoRoute.js');
-
-const db = require('./db');
+const { read } = require('./controllers/index');
 
 const app = express();
 
@@ -13,10 +10,13 @@ const port = 8081;
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/api/artistinfo', artistInfoRoute);
-app.use('/api/songinfo', songInfoRoute);
-app.use('*', express.static(path.join(__dirname, '../client/dist')));
+app.get('/api/song/:song_id', read);
+// app.use('/:song_id', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../public/index.html'));
+// });
+
+app.use('/:sid', express.static(path.join(__dirname, '../public')));
 
 app.listen(port, () => console.log(`LISTENING ON PORT ${port}`));
