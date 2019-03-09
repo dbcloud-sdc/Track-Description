@@ -35,7 +35,7 @@ class ReadableStream extends Readable {
     this.limit = limit;
     this.chunk_size = chunk_size;
     this.id = 0;
-    this.progressBar = 25;
+    this.progressBarLength = 25;
     this.startTime = moment();
   }
   
