@@ -10,11 +10,13 @@ const port = 8081;
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, '../client/dist')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/api/song/:song_id', read);
-app.use('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-});
+// app.use('/:song_id', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../public/index.html'));
+// });
+
+app.use('/:sid', express.static(path.join(__dirname, '../public')));
 
 app.listen(port, () => console.log(`LISTENING ON PORT ${port}`));

@@ -22,15 +22,9 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: `${__dirname}/client/dist`,
+    path: `${__dirname}/public/dist`,
     publicPath: '/',
     filename: 'bundle.js',
   },
-  devServer: {
-    contentBase: './client/dist',
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin({}),
-  ],
   mode: 'development'
 };
