@@ -6,3 +6,4 @@ server/config.js
 public/dist
 newrelic.js
 server/newrelic_agent.log
+newrelic_agent.log
