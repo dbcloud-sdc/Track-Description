@@ -11,8 +11,8 @@ const port = 8081;
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/api/song/:song_id', read);
+app.get('/api/song/:songID/description', read);
 
-app.use('/:sid', express.static(path.join(__dirname, '../public')));
+app.use('/song/:songID', express.static(path.join(__dirname, '../public')));
 
 app.listen(port, () => console.log(`LISTENING ON PORT ${port}`));

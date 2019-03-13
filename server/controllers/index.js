@@ -2,14 +2,14 @@ const models = require ('../models/index.js');
 
 const controllers = {
   read: (req, res) => {
-    models.fetchSongInfo(req.params.song_id, (err, data) => {
+    models.fetchSongInfo(req.params.songID, (err, data) => {
       if (err) {
         res.status(201).send(err);
       } else {
         const results = data.rows[0];
         let trackInfo = {
           song: {
-            id: Number(req.params.song_id),
+            id: Number(req.params.songID),
             song_name: results.song_name,
             artist_id: results.artist_id,
             license: results.license,

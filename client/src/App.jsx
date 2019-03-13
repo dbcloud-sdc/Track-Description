@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   fetchData() {
-    fetch(`/api/song/${this.props.song_id}`).then(response => response.json())
+    fetch(`/api/song/${this.props.song_id}/description`).then(response => response.json())
     .then((data) => {
       this.setState({
         songData: data.song,
